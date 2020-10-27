@@ -1,0 +1,121 @@
+<main>
+
+
+    <div class="container">
+        <h1>Template Form</h1>
+    </div>
+    <br>
+
+    <form autocomplete="off" [formGroup]="forma" (ngSubmit)="saveForm()">
+
+        <div class="container">
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Nombre</label>
+                <div class="col-8">
+                    <input class="form-control" type="text" placeholder="Escribe tu nombre" formControlName="name"
+                     [ngClass]="{'is-valid': invalName, 'is-invalid': valName}">
+                    <small *ngIf="valName" class="form-text text-danger">El nombre debe tener al menos 3 letras</small>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Apellido</label>
+                <div class="col-8">
+                    <input class="form-control" type="text" placeholder="Escribe tu apellido"
+                        formControlName="lastname" [ngClass]="{'is-valid': invalLastname, 'is-invalid': valLastname}">
+                    <small *ngIf="valLastname" class="form-text text-danger">El apellido debe tener al menos 3 letras</small>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Edad</label>
+                <div class="col-8">
+                    <input class="form-control" type="number" placeholder="Escribe tu edad" formControlName="age"
+                     [ngClass]="{'is-valid': invalAge, 'is-invalid': valAge}">
+                    <small *ngIf="valAge" class="form-text text-danger">Este campo solo admite números</small>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Email</label>
+                <div class="col-8">
+                    <input class="form-control" type="email" placeholder="Escribe tu email" formControlName="email" 
+                    [ngClass]="{'is-valid': invalEmail, 'is-invalid': valEmail}">
+                    <small *ngIf="valEmail" class="form-text text-danger">El email debe de ser
+                        válido</small>
+                </div>
+            </div>
+            <div formGroupName="adress">
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Calle</label>
+                    <div class="col-8">
+                        <input class="form-control" type="text" placeholder="Calle"
+                        [ngClass]="{'is-valid': invalStreet, 'is-invalid': valStreet}"   formControlName="street">
+                        <small *ngIf="valStreet" class="form-text text-danger">La calle debe tener al menos 3 letras</small>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Ciudad</label>
+                    <div class="col-8">
+                        <input class="form-control" type="text" placeholder="Ciudad" formControlName="city"
+                        [ngClass]="{'is-valid': invalCity, 'is-invalid': valCity}">
+                        <small *ngIf="valCity" class="form-text text-danger">El ciudad debe tener al menos 3 letras</small>
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Provincia</label>
+                    <div class="col-8">
+                        <input class="form-control" type="text" placeholder="Provincia"
+                        [ngClass]="{'is-valid': invalProvince, 'is-invalid': valProvince}"  formControlName="province">
+                        <small *ngIf="valProvince" class="form-text text-danger">El provincia debe tener al menos 3 letras</small>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Pais</label>
+                    <div class="col-8">
+                        <input class="form-control" type="text" placeholder="Pais"
+                        [ngClass]="{'is-valid': invalCountry, 'is-invalid': valCountry}" formControlName="country">
+                        <small *ngIf="valCountry" class="form-text text-danger">El pais debe tener al menos 3 letras</small>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <button class="btn btn-block btn-primary" type="submit">Enviar</button>
+            </div>
+
+        </div>
+    </form>
+
+    <div class="container">
+
+        <ul class="list-group">
+            <li class="list-group-item bg-info text-white">Datos del formulario</li>
+            <li class="list-group-item">Nombre: {{name_}}</li>
+            <li class="list-group-item">Apellido: {{lastname_}}</li>
+            <li class="list-group-item">Edad: {{age_}}</li>
+            <li class="list-group-item">Email: {{email_}}</li>
+            <li class="list-group-item">Calle: {{street_}}</li>
+            <li class="list-group-item">Ciudad: {{city_}}</li>
+            <li class="list-group-item">Provincia: {{province_}}</li>
+            <li class="list-group-item">Pais: {{country_}}</li>
+
+        </ul>
+    </div>
+
+</main>
